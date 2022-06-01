@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Страница для тестов {% endblock %}</h1>
+    {% for comment in comments %}
+        <p>{{comment['comment']}}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}
