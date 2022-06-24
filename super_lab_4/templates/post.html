@@ -1,0 +1,15 @@
+<!-- Это значит, что данный шаблон является расширением base.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Вот кусок кода, который отвечает за отображение картинок -->
+    {% if post['photo_src'] %}
+        <img class="img-thumbnail" src="{{ post['photo_src'] }}" alt="Главная фотография">
+    {% endif %}
+    <!-- Это его конец -->
+    <h2>{% block title %} {{ post['title'] }} {% endblock %}</h2>
+    <!-- Вот кусок кода, который отвечает за отображение картинок -->
+    <p>{{ post['content'] }}</p>
+    <!-- Это его конец -->
+    <span class="badge badge-primary">{{ post['created'] }}</span>
+{% endblock %}
